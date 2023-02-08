@@ -57,7 +57,7 @@ const MessageContainer = styled.div`
   display: flex;
   flex-direction: column;
   background: #e5ddd6;
-  background-image:url("/whatsapp-clone/chat-background.png");
+  background-image: url("/whatsapp-clone/chat-background.png");
   height: 100%;
 
   overflow-y: auto;
@@ -67,7 +67,7 @@ const MessageDiv = styled.div`
   justify-content: ${(props) => (props.isYours ? "flex-end" : "flex-start")};
   display: flex;
   margin: 5px 15px;
-  opacity:1;
+  opacity: 1;
 `;
 
 const Message = styled.div`
@@ -75,7 +75,7 @@ const Message = styled.div`
   color: #303030;
   padding: 8px 10px;
   font-size: 14px;
-  border:1px solid black;
+  border: 1px solid black;
   border-radius: 4px;
   background: ${(props) => (props.isYours ? "#daf8cb" : "white")};
 `;
@@ -92,6 +92,8 @@ function ConversationComponent(props) {
   };
 
   const onEnterPress = (e) => {
+    setVisi(false);
+
     if (e.key === "Enter" && text) {
       const message = [...messageList];
 
@@ -133,8 +135,8 @@ function ConversationComponent(props) {
         ))}
         {pVisible && (
           <Picker
-          pickerStyle={{height: 50, width: 100,position:'absolute'}}
-            onEmojiClick={onEmojiClick}
+            emojiStyle={{ height: 50, width: 100, position: "absolute" }}
+            onEmojiClick={onEmojiClick} searchDisabled
           />
         )}
       </MessageContainer>
@@ -155,6 +157,7 @@ function ConversationComponent(props) {
           src={"/profile/enter.png"}
           style={{ paddingLeft: "5px", opacity: "1" }}
           onClick={() => {
+            setVisi(false);
             if (text) {
               const message = [...messageList];
 
