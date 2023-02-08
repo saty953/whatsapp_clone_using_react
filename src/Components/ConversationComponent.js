@@ -59,8 +59,23 @@ const MessageContainer = styled.div`
   background: #e5ddd6;
   background-image: url("/whatsapp-clone/chat-background.png");
   height: 100%;
-
+  overflow-x: hidden;
   overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: grey; 
+    border: 1px solid black;
+    border-radius:10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: black; 
+  }
 `;
 
 const MessageDiv = styled.div`
