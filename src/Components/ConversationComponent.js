@@ -74,7 +74,7 @@ const MessageContainer = styled.div`
     border-radius:10px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: black; 
+    background: ; 
   }
 `;
 
