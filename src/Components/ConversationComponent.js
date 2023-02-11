@@ -148,12 +148,12 @@ function ConversationComponent(props) {
             <Message isYours={message.senderID === 0}>{message.text}</Message>
           </MessageDiv>
         ))}
-        {pVisible && (
+       <div style={{ height: 50, width: 100, position: "absolute" ,top:"110px" }}>{pVisible && (
           <Picker
-            emojiStyle={{ height: 50, width: 100, position: "absolute" }}
+        
             onEmojiClick={onEmojiClick} searchDisabled
           />
-        )}
+        )}</div> 
       </MessageContainer>
       <Chatbox>
         <SearchContainer>
