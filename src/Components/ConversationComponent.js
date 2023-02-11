@@ -148,14 +148,15 @@ function ConversationComponent(props) {
             <Message isYours={message.senderID === 0}>{message.text}</Message>
           </MessageDiv>
         ))}
-       <div style={{ height: 50, width: 100, position: "absolute" ,top:"110px" }}>{pVisible && (
+      
+      </MessageContainer>
+      <Chatbox>
+      <div style={{ height: 50, width: "80px", position: "absolute" ,top:"110px" }}>{pVisible && (
           <Picker
         
             onEmojiClick={onEmojiClick} searchDisabled
           />
         )}</div> 
-      </MessageContainer>
-      <Chatbox>
         <SearchContainer>
           <Impjimage src={"/data.svg"} onClick={() => setVisi(!pVisible)} />
           <SearchInput
@@ -184,6 +185,15 @@ function ConversationComponent(props) {
                 addedOn: "12:00 PM",
               });
 
+              setMessageList(message);
+              message.push({
+                id: 0,
+                messageType: "TEXT",
+                text: "hey, sorry WhatsAap is not connected with database yet",
+                senderID: 1,
+                addedOn: "00",
+              });
+        
               setMessageList(message);
               setText("");
             }

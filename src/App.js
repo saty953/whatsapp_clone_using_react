@@ -12,6 +12,7 @@ background color:#f8f9fb;
 const Placeholder = styled.div`
   display: flex;
   flex: 3;
+
   flex-direction: column;
   justify-content: center;
   font-size: 14px;
