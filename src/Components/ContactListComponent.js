@@ -113,6 +113,7 @@ const Count = styled.div`
  border-radius:50%;
  text-align:center;
 border:1px solid black;
+margin-left:3px;
 `;
 
 const ContactComponent = (props) => {
@@ -126,7 +127,7 @@ const [click,setclick]=useState(true);
         <ContactName>{userData.name}</ContactName>
         <MessageText>{userData.lastText}</MessageText>
       </ContactInfo>
-      <MessageTime>{userData.lastTextTime}{click?<Count>1</Count>:<>.</>}</MessageTime>
+      <MessageTime>{userData.lastTextTime}{click?<Count> 1</Count>:<>.</>}</MessageTime>
     </ContactItem>
   );
 };
