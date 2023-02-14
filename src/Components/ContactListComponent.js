@@ -105,18 +105,28 @@ const Setting = styled.div`
     display: none;
   }
 `;
+const Count = styled.div`
+ background:#00FF00;
+ height:20px;
+ color:black;
+ width:20px;
+ border-radius:50%;
+ text-align:center;
+border:1px solid black;
+`;
 
 const ContactComponent = (props) => {
   const { userData, setChat } = props;
-
+const [click,setclick]=useState(true);
   return (
-    <ContactItem onClick={() => setChat(userData)}>
+    <ContactItem onClick={() => {setChat(userData)
+    setclick(false)} }>
       <ProfileIcon src={userData.profilePic} />
       <ContactInfo>
         <ContactName>{userData.name}</ContactName>
         <MessageText>{userData.lastText}</MessageText>
       </ContactInfo>
-      <MessageTime>{userData.lastTextTime}</MessageTime>
+      <MessageTime>{userData.lastTextTime}{click?<Count>4</Count>:<>.</>}</MessageTime>
     </ContactItem>
   );
 };
