@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { messagesList } from "../mockData";
 import Picker from "emoji-picker-react";
 import { useState } from "react";
+import "./script.js";
 
 const Container = styled.div`
   display: flex;
@@ -60,7 +61,8 @@ const MessageContainer = styled.div`
   background-image: url("/whatsapp-clone/chat-background.png");
   height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
+ 
   ::-webkit-scrollbar {
     width: 10px;
   }
@@ -136,13 +138,15 @@ function ConversationComponent(props) {
     }
   };
 
+
   return (
     <Container>
       <ProfileHeader>
         <ProfileImg src={selectedChat.profilePic} />
         {selectedChat.name}
       </ProfileHeader>
-      <MessageContainer>
+      <MessageContainer id="abc">
+
         {messageList.map((message) => (
           <MessageDiv isYours={message.senderID === 0}>
             <Message isYours={message.senderID === 0}>{message.text}</Message>
@@ -189,7 +193,7 @@ function ConversationComponent(props) {
               message.push({
                 id: 0,
                 messageType: "TEXT",
-                text: "hey, sorry WhatsAap is not connected with database yet",
+                text: "hey sorry, WhatsAap is not connected with database yet",
                 senderID: 1,
                 addedOn: "00",
               });
