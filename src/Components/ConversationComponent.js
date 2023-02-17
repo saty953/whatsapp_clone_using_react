@@ -138,18 +138,27 @@ setTimeout(()=>{
       message.push({
         id: 0,
         messageType: "TEXT",
-        text: "hey,WhatsAap is not connected with database yet",
+        text: "hey,",
         senderID: 1,
         addedOn: "00",
       });
 
       setMessageList(message);
-
+      message.push({
+        id: 0,
+        messageType: "TEXT",
+        text: " WhatsAap is not connected with database yet",
+        senderID: 1,
+        addedOn: "00",
+      })
+      setMessageList(message);
+    
+     
       setText("");
     }
   };
 
-
+ 
   return (
     <Container>
       <ProfileHeader>
