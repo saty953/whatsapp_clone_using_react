@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { messagesList } from "../mockData";
 import Picker from "emoji-picker-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./script.js";
 
 const Container = styled.div`
@@ -102,6 +102,17 @@ function ConversationComponent(props) {
   const [text, setText] = useState("");
   const [pVisible, setVisi] = useState(false);
   const [messageList, setMessageList] = useState(messagesList);
+
+  useEffect(()=>{
+console.log("int the use effect")
+setTimeout(()=>{
+  console.log("in seTimeout")
+  const ms=document.getElementById("abc");
+  if(ms!==null){
+     ms.scrollTop=ms.scrollHeight;
+  }
+},100)
+  },[messageList])
 
   const onEmojiClick = (event, emojiObj) => {
     console.log("Event", event.emoji);

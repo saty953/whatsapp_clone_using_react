@@ -207,8 +207,8 @@ function ContactLIstComponent(props) {
           <SearchInput placeholder="Search or start new chat" />
         </SearchContainer>
       </SearchBox>
-      {contactList.map((userData) => (
-        <ContactComponent userData={userData} setChat={props.setChat} />
+      {contactList.map((userData ,i) => (
+        <ContactComponent userData={userData} key={i} setChat={props.setChat} />
       ))}
     </Container>
   );
