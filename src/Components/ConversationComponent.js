@@ -213,6 +213,16 @@ setTimeout(()=>{
               message.push({
                 id: 0,
                 messageType: "TEXT",
+                text: "hey sorry, ",
+                senderID: 1,
+                addedOn: "00",
+              });
+        
+              setMessageList(message);
+              setMessageList(message);
+              message.push({
+                id: 0,
+                messageType: "TEXT",
                 text: "hey sorry, WhatsAap is not connected with database yet",
                 senderID: 1,
                 addedOn: "00",
