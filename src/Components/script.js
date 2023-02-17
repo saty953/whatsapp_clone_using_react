@@ -1,7 +1,8 @@
 // to achive scroll 
-setInterval(()=>{
-    const ms=document.getElementById("abc");
-    if(ms!==null){
-       ms.scrollTop=ms.scrollHeight;
-    }
-},10)
+// setTimeout(()=>{
+//     console.log("in seTimeout")
+//     const ms=document.getElementById("abc");
+//     if(ms!==null){
+//        ms.scrollTop=ms.scrollHeight;
+//     }
+// },100)
